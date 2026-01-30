@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Experimentation | Your Name</title>
+    <title>AI Experimentation | Cecilia Murphy</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -22,34 +22,112 @@
 
         <section>
             <h2>What I Tried</h2>
-            <p>Tools explored, experiments run, what you were trying to discover...</p>
+            <p>For this lab, I experimented with Leonardo.ai, Adobe Firefly, Runway, and Pika. I wanted to explore image and video generation since I've mostly used AI for educational and organizational purposes in my personal life. My goal was to test how these tools handle identity, realism, and instruction-following when given reference material.</p>
+
+            <p>I began with image generation using Leonardo.ai and Adobe Firefly, attempting to create an imaginative “future” photo of myself. I then moved into video generation using Runway and Pika to see how AI handles motion, environment, and realism compared to still images.</p>
+</p>
         </section>
 
         <section>
             <h2>What Happened</h2>
-            <p>What worked, what didn't, what surprised you...</p>
+            <p>I started with Leonardo.ai, where I uploaded two reference photos—one of me at age six and one current headshot—and asked the program to generate an image of me at age 35 with my five-year-old daughter playing with a dalmatian in an urban park.</p>
 
-            <!-- Add screenshots or examples -->
             <figure>
-                <img src="images/experiment1.png" alt="Description of screenshot">
-                <figcaption>Caption explaining what this shows</figcaption>
+                <img src="images/child.jpg" 
+                alt="Me, now" width="300">
+                <figcaption>Me, age 6</figcaption>
             </figure>
+            
+            <figure>
+                <img src="images/headshot.jpg" 
+                alt="Me, now" width="300">
+                <figcaption>Me, now</figcaption>
+            </figure>
+
+            <p>The image followed my prompt in terms of composition, lighting, and scale, but the woman did not resemble me. While she was Asian, she appeared Vietnamese, whereas I am Chinese. When I attempted to correct this by asking the model to refer back to my photos, the request was flagged under “content safety guidelines,” and the image failed to generate.</p>
+
+            <figure>
+                <img src="images/leonardo-1.jpg" 
+                alt="First attempt at Leonardo.ai" width="300">
+                <figcaption>First attempt at Leonardo.ai</figcaption>
+            </figure>
+
+            <p>After several failed attempts and running out of free credits, I switched to Adobe Firefly. Firefly only allowed one reference photo, so I used my headshot.</p>
+
+            <p>Firefly initially generated a man whose face looked nothing like mine. Although the image quality was more realistic than Leonardo.ai, repeated attempts continued to default to a male subject and altered my race entirely.</p>
+
+            <figure>
+                <img src="images/firefly-1.jpg" 
+                alt="First attempt at Firefly" width="300">
+                <figcaption>First attempt at Firefly</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/firefly-2.jpg" 
+                alt="Second attempt at Firefly" width="300">
+                <figcaption>Second attempt at Firefly</figcaption>
+            </figure>
+
+            <p>Only after explicitly clarifying my gender and race did Firefly generate a more accurate result.</p>
+
+            <figure>
+                <img src="images/firefly-3.jpg" 
+                alt="Third attempt at Firefly" width="300">
+                <figcaption>Third attempt at Firefly</figcaption>
+            </figure>
+
+            <p>Even then, the face still did not resemble me, and increasing the reference strength to 100% had no effect. At that point, I abandoned photo generation.</p>
+
+            <p>For video generation, I used a photo of myself horseback riding in Mexico and asked Runway to place the horse and rider on a beach at sunset.</p>
+
+            <figure>
+                <video src="images/runway-1.mp4" width="300" controls>
+                Your browser does not support the video tag.
+                </video>
+                <figcaption>First attempt at Runway</figcaption>
+            </figure>
+
+            <p>While the movement and depth perception were surprisingly realistic, the transition was abrupt and began in a jungle setting I did not want. A second attempt with clearer constraints still failed to produce the requested beach setting.</p>
+
+            <figure>
+                <video src="images/runway-2.mp4" width="300" controls>
+                Your browser does not support the video tag.
+                </video>
+                <figcaption>Second attempt at Runway</figcaption>
+            </figure>
+
+            <p>Lastly, I attempted to use Pika with the same photo and prompt, but the tool refused to generate a video unless I subscribed due to “high demand.”</p>
+
+            <figure>
+                <img src="images/pika.jpg" 
+                alt="Screenshot of my failed attempt at Pika" width="300">
+                <figcaption>Screenshot of my failed attempt at Pika</figcaption>
+            </figure>
+            
         </section>
 
         <section>
             <h2>What I Learned</h2>
-            <p>Insights about how tools work, assumptions or biases noticed, unanswered questions...</p>
+            <p>Overall, the photo generation results were inconsistent. While the programs generally produced images with proper scale, lighting, and background, they struggled to accurately represent me. In multiple cases, the generated faces did not look like me, which made it clear that reference photos were not being meaningfully analyzed.</p>
+
+            <p>Although I wasn't super picky or surprised by these issues, it became obvious that the programs could do a better job identifying and portraying races and ethnicities, especially for non-white people. Generalizing or “standardizing” the look of a certain race is harmful and misrepresentative, and I noticed this problem almost exclusively with people of color. This further exemplified the bias many AI tools have in their default to whiteness.</p>
+
+            <p>I was especially confused when trying to correct a racial misinterpretation resulted in a “content safety guidelines” error. While this was likely unintentional, the lack of understanding around racial diversity felt avoidable and raised questions about how these tools define risk.</p>
+
+            <p>Adobe Firefly introduced a different issue by repeatedly defaulting to a male subject, even though I provided a clear reference photo where I am a woman. The faces still did not resemble me, and increasing the reference photo strength made no difference, which ultimately led me to give up on photo generation.</p>
+
+            <p>With video generation, I was surprised by how accurate the movement and depth perception were, even when the program failed to follow my environmental instructions. Pika was the most disappointing tool I tested, as monetization prevented meaningful experimentation.</p>
         </section>
 
         <section>
             <h2>Looking Forward</h2>
-            <p>How you might use or avoid AI tools, questions for evaluating new tools...</p>
+            <p>In the future with photo generation, I would still use AI but sparingly. I only want to use it when I or someone else cannot design or create something I need for work or education. Although I've seen very successful AI videos and photos online, I simply cannot condone the excessivity of AI art across all social platforms. When evaluating a new AI tool, I definitely think it is important to test the program and understand its limits so you can be most successful with whatever you do.</p>
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Your Name | <a href="https://github.com/yourusername/dcda-portfolio">GitHub</a></p>
+        <p>&copy; 2026 Cecilia Murphy | <a href="https://github.com/ceciliammurphy">GitHub</a></p>
     </footer>
 
 </body>
