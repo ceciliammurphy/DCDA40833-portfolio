@@ -163,6 +163,26 @@ main section li {
     margin-bottom: 0.5rem;
 }
 
+/* Style all figure/images */
+figure {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+figure figcaption {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
 /* =========================
    Data Visualizations
    ========================= */
