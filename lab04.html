@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Visualization | Cecilia Murphy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="lab02.html">Lab 2: AI Evaluation</a>
+            <a href="lab03.html">Lab 3: Visualization Critique</a>
+            <a href="lab04.html" class="active">Lab 4: Tableau Visualization</a>
+            <!-- Add more lab links as the semester progresses -->
+        </nav>
+        <h1>Tableau Visualization</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Reflection and Analysis</h2>
+
+            <h3>Data Preparation</h3>
+            <p>For this lab, I worked with a Kaggle dataset that tracks global fashion brands. It includes their names, countries of origin, ranks, brand equity, and growth rates from 2001 to 2021. Since the file was already in Excel, uploading it to Tableau Public was simple. I didn't have technical problems, but I had to make sure the data was organized well before creating any visuals.
+
+            <p>Each year's equity data was in its own column (Equity2001, Equity2011, Equity2021) instead of being grouped under a single 'year' variable. Instead of changing the dataset to a long format, I used Tableau's Measure Names and Measure Values to compare the years side by side. This approach made it easy to see long-term changes without having to completely restructure the data, and it worked well for my analysis.</p>
+
+            <p> I had a problem with missing values for brands that didn't have data in earlier years. These gaps made the time comparison chart messy and harder to read. To solve this, I hid brands with missing data so the final visualization would show real trends instead of empty spots. The dataset was mostly clean, but getting it ready for visuals required some careful decisions.</p>
+
+            <h3>Design Choices</h3>
+            <p>I created three visualizations, each meant to answer a different question about brand power.</p>
+
+            <div class='tableauPlaceholder' id='viz1770959113231' style='position: relative'><noscript><a href='#'><img alt='Brand Rank vs Equity by Country in 2021 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Lab4_17709590024510&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Lab4_17709590024510&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Lab4_17709590024510&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1770959113231');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            
+            <p>The first visualization was a scatterplot comparing brand rank and brand equity in 2021, with colors showing each brand's country of origin. I picked a scatterplot to see if rank and equity really match up as expected. If equity shows brand strength, higher equity should go with better (lower) rankings. Using color for country helped me spot if some countries were grouped at the top.</p>
+
+            <div class='tableauPlaceholder' id='viz1770959144686' style='position: relative'><noscript><a href='#'><img alt='Top 15 Most Equitable Brands in 2021And Each Country of Origin ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Lab4Viz2_17709590761100&#47;Sheet2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Lab4Viz2_17709590761100&#47;Sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Lab4Viz2_17709590761100&#47;Sheet2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1770959144686');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+            <p>The second visualization was a bar chart showing the top 15 brands by equity in 2021. I sorted the brands from highest to lowest equity to make the ranking clear. This chart highlighted which brands currently have the most power. Coloring by country also showed where the top brands are based.</p>
+
+            <div class='tableauPlaceholder' id='viz1770959159543' style='position: relative'><noscript><a href='#'><img alt='Equity Trend Over 20 Years ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Lab4Viz3_17709590951050&#47;Sheet3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Lab4Viz3_17709590951050&#47;Sheet3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;La&#47;Lab4Viz3_17709590951050&#47;Sheet3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1770959159543');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+            <p>The third visualization compared equity in 2001, 2011, and 2021 using side-by-side bars. I focused on these milestone years instead of showing every year to highlight long-term trends. This chart made it easy to see which brands grew steadily, which had rapid growth, and which stayed about the same over time.</p>
+
+            <h3>Expected Patterns</h3>
+            <p>Going into this, I expected two main things. First, I assumed there would be a strong relationship between rank and equity in 2021. If rank is based on brand value, then brands with higher equity should consistently rank higher. The scatterplot confirmed this almost immediately. The points formed a clear pattern rather than random noise, reinforcing that equity and rank are closely tied.</p>
+
+            <p>Second, I expected European luxury brands, especially French and Italian ones, to lead in top equity positions. Brands like Louis Vuitton, Chanel, Hermès, and Gucci have long defined global luxury. The top 15 bar chart mostly confirmed this, with French brands often appearing among the highest equity values and showing their lasting influence.</p>
+
+            <p>In the 20-year comparison, I expected established luxury brands to show steady, controlled growth instead of big jumps. This was true for several brands, especially Louis Vuitton and Chanel, which had strong but consistent growth over time.</p>
+
+            <h3>Surprises and Outliers</h3>
+            <p>The biggest surprise was how dominant Nike was. I knew Nike was strong, but I didn't expect its equity growth to outpace many traditional luxury brands by so much. In both the 2021 ranking and the 20-year comparison, Nike stood out as an outlier with rapid growth. This suggests that global sportswear and cultural influence may now rival or even surpass traditional ideas of luxury brand power.</p>
+
+            <p>Another interesting point was how much equity is concentrated at the very top. The top 15 chart showed a sharp drop after the first few brands. Brand equity isn't spread out evenly; most of it is held by a small group of global leaders. This supports the idea that fashion works in a hierarchy, not a flat competitive field.</p>
+
+            <p>Some brands also showed only small growth over the past twenty years. While this might seem unremarkable, it actually points to a different strategy: choosing stability over rapid expansion. Not every brand aims for fast growth. Some focus on keeping steady prestige instead of chasing big increases.</p>
+
+            <h3>Questions for Further Investigation</h3>
+            <p>These patterns raise bigger questions about what drives brand equity today. Why did sportswear brands like Nike see such strong long-term growth compared to traditional luxury brands? Is this because of globalization, celebrity partnerships, digital marketing, or cultural relevance?</p>
+
+            <p>It would also help to look at how brand equity relates to revenue and what consumers think. Does higher equity always mean more financial growth, or is it more about cultural influence? Finally, studying major economic events like the 2008 financial crisis or the rise of e-commerce could help explain changes in growth patterns.</p>
+
+            <h3>Tool Evaluation</h3>
+            <p>Tableau Public was helpful for spotting patterns and relationships in the data. The scatterplot made it easy to see correlations, and the side-by-side bar charts clearly showed long-term changes. Using Measure Names and Measure Values let me compare several years without having to restructure the data.</p>
+
+            <p>However, Tableau can get visually cluttered when working with wide-format time data. I had to be careful with handling missing values and keeping everything readable. While Tableau is great for exploring data visually, more advanced statistical modeling would require other tools.</p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Cecilia Murphy</p>
+    </footer>
+</body>
+</html>
