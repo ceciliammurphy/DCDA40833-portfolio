@@ -28,6 +28,76 @@
 }
 
 /* =========================
+   Dark Mode Overrides
+   ========================= */
+html.dark-mode {
+    --primary-color: #e8e0d6;
+    --secondary-color: #4a4540;
+    --accent-color: #d4726a;
+    --accent-soft: #3d2626;
+    --text-color: #e4ddd4;
+    --text-secondary: #a8a096;
+    --bg-color: #1a1816;
+    --bg-alt: #242120;
+    --white: #2a2724;
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    line-height: 1;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+#dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dark mode adjustments for elements using literal colors */
+html.dark-mode main section {
+    background-color: var(--white);
+}
+
+html.dark-mode table {
+    background: var(--white);
+}
+
+html.dark-mode tr:nth-child(even) {
+    background: var(--bg-alt);
+}
+
+html.dark-mode p code, html.dark-mode li code {
+    background: #2a2724;
+    color: #e87878;
+}
+
+html.dark-mode .portfolio-card {
+    background: var(--white);
+    color: var(--text-color);
+}
+
+html.dark-mode .portfolio-card p {
+    color: var(--text-secondary);
+}
+
+html.dark-mode .framework-callout {
+    background: linear-gradient(135deg, #2a2230, #1e1528);
+}
+
+html.dark-mode header {
+    color: white;
+}
+
+/* =========================
    Basic Reset & Typography
    ========================= */
 * {
@@ -76,10 +146,13 @@ nav {
     padding: 0.75rem;
     display: flex;              /* Make nav a flex container */
     justify-content: center;    /* Center the ul inside nav */
+    align-items: center;        /* Vertically center items */
+    gap: 0.5rem;                /* Space between nav content and toggle */
     position: sticky;           /* Stick to top when scrolling */
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 /* Style the navigation list */
@@ -109,6 +182,18 @@ nav a {
 nav a:hover {
     background-color: var(--accent-soft);
     color: var(--primary-color);
+}
+
+/* Wrapper for loose nav links on lab pages (created by JS) */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 }
 
 /* =========================
@@ -405,6 +490,27 @@ footer a:hover {
 }
 
 /* =========================
+   Hamburger Menu Button
+   ========================= */
+#hamburger-toggle {
+    display: none;              /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    line-height: 1;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    order: -1;                  /* Push to the left of nav */
+}
+
+#hamburger-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
    Responsive Design (Mobile)
    ========================= */
 @media (max-width: 768px) {
@@ -412,20 +518,44 @@ footer a:hover {
         font-size: 1.5rem;     /* Smaller on mobile */
     }
 
-    nav {
-        font-size: 0.9rem;
+    /* Show hamburger button on mobile */
+    #hamburger-toggle {
+        display: block;
     }
 
-    /* Stack navigation vertically on mobile */
-    nav ul {
-        flex-direction: column;  /* Change from row to column */
-        align-items: center;     /* Center the stacked items */
+    nav {
+        font-size: 0.9rem;
+        flex-wrap: wrap;        /* Allow content to wrap below hamburger row */
+    }
+
+    /* Nav links container (ul or direct links) — hidden by default */
+    nav ul,
+    nav .nav-links {
+        display: none;                  /* Hidden until toggled */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0.25rem;
+        padding: 0.5rem 0;
+    }
+
+    /* When nav is open, show the links */
+    nav.nav-open ul,
+    nav.nav-open .nav-links {
+        display: flex;
     }
 
     nav a {
         display: block;          /* Full width for easier tapping */
         width: 100%;
         text-align: center;
+        padding: 0.6rem 1rem;
+    }
+
+    /* Keep dark mode toggle visible in the hamburger row */
+    #dark-mode-toggle {
+        order: 1;               /* Push to the right */
+        margin-left: auto;
     }
 
     main section {

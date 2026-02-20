@@ -5,45 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vibe Coding | Cecilia Murphy</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/darkmode.js"></script>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lab02.html">Lab 2: AI Evaluation</a>
+        <a href="lab03.html">Lab 3: Visualization Critique</a>
+        <a href="lab04.html" class="active">Lab 4: Tableau Visualization</a>
+        <a href="lab05.html" class="active">Lab 5: Vibe Coding</a>
+    </nav>
+
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="lab02.html">Lab 2: AI Evaluation</a>
-            <a href="lab03.html">Lab 3: Visualization Critique</a>
-            <a href="lab04.html" class="active">Lab 4: Tableau Visualization</a>
-            <a href="lab05.html" class="active">Lab 5: Vibe Coding</a>
-        </nav>
         <h1>Vibe Coding</h1>
     </header>
 
     <main>
         <section>
-            <h2>Experiment 1</h2>
+            <h2>Reflection</h2>
 
-            <h3>Section 1</h3>
-            <p></p>
+            <h3>Technical Understanding</h3>
+            <p>For this project, I used AI in two ways. First, I had it build features like dark mode and a hamburger menu. Then, I used AI to help debug broken code. Doing both taught me more than I expected. I saw not only what AI can do, but also how much I still need to do as the person guiding the process.</p>
 
-            <h3>2</h3>
-            <p></p>
+            <p>In Experiment A, AI created a dark mode toggle and a responsive hamburger menu. Basically, dark mode worked by adding or removing a dark-mode class on the <body> when you click a button. The JavaScript “listens” for the click, toggles the class, and in the improved version, saves your preference with localStorage so it stays after you refresh. The hamburger menu adds a button, toggles a nav-open class, and uses CSS to show or hide links on smaller screens.</p>
 
-            <h3>3</h3>
-            <p></p>
+            <p>I understand the general logic behind both features and am comfortable with event listeners, matching IDs, and toggling classes. While I kind of know how things work, there are still areas where I can recognize the outcome but wouldn't have figured out the solution on my own. Like, I get what flex-wrap does and why media queries are useful, but I wouldn't have used them without AI's suggestion. The same goes for accessibility features like aria-expanded. I know what they do now, but I wouldn't have thought to include them myself.</p>
 
+            <p>In Experiment C, I used AI to help debug broken HTML, CSS, and JavaScript. I had already found the main JavaScript bug, which was using the wrong getElementById. The AI also noticed that my anchor links didn't match the section IDs exactly and that I hadn't defined any dark mode CSS. I was so focused on the JavaScript error that I didn't look at the whole system. My biggest takeaway was that debugging isn't just about fixing one line. It's about seeing how HTML, CSS, and JavaScript all work together.</p>
+
+            <h3>Process Evaluation</h3>
+            <p>AI was helpful for speed and spotting patterns. It quickly found mismatches and structural issues I might have overlooked. It also helped me make responsive fixes faster than starting from scratch. Sometimes, though, it went overboard and added improvements I didn't ask for, so I had to step back and choose what was actually needed.</p>
+
+            <p>Overall, my role/human role still matters. AI can write code and point out what's broken, but it doesn't know what I'm actually trying to build. I have to decide what makes sense for my project, what's overkill, and what I actually understand well enough to keep. Writing comments made that obvious.</p>
+
+            <h3>Ethical & Pedagogical Considerations</h3>
+            <p>AI is helpful, especially for debugging and setting up structure quickly. But if I just paste whatever it gives me and move on, I'm not really learning anything. The useful part was testing the fixes, tweaking them, and making sure I could explain them in my own words. Going forward, using AI will speed things up and catch mistakes, but I'll still make sure I understand what's in my code.</p>
         </section>
 
         <section>
-            <h2>Experiment 2</h2>
+            <h2>Brief Overview</h2>
+            <p>For Lab 5, I used AI to help implement a dark mode toggle and a responsive hamburger menu on my portfolio site, and then I used AI again to debug intentionally broken HTML/CSS/JS. The goal wasn't just to make the features work, but to understand how they worked. The dark mode feature toggles a dark-mode class on the <body> when a button is clicked, and CSS handles the visual changes. In the improved version, localStorage saves the user's preference so it persists after refresh. The hamburger menu works by toggling a nav-open class and using responsive CSS to show or hide links on smaller screens. I included a screenshot/demo below showing both features working on desktop and mobile.</p>
+            <p>Here's a key snippet from the dark mode feature, commented using the understanding spectrum:
 
-            <h3>Section 1</h3>
-            <p></p>
+            <figure>
+                <img src="images/dark-mode.png" alt="JavaScript for the dark mode feature">
+                <figcaption>
+                    <p>Dark Mode Feature Implementation</p>
+                </figcaption>
+            </figure>
 
-            <h3>2</h3>
-            <p></p>
-
-            <h3>3</h3>
-            <p></p>
+            <p>For more advanced pieces (like responsive flexbox fixes or accessibility attributes), I'd place myself closer to “I understand what it does but wouldn't have written it alone.” My vibe coding guideline is simple: AI can help with structure, speed, and debugging, but I don't move on unless I can explain what the code is doing. I'll use AI to troubleshoot and refine, but not to skip understanding.</p>
 
         </section>
     </main>
