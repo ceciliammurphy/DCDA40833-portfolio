@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2a7d39852100e2abfbdd39ef51b4ced9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2a7d39852100e2abfbdd39ef51b4ced9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2a7d39852100e2abfbdd39ef51b4ced9 = L.map(
+                "map_2a7d39852100e2abfbdd39ef51b4ced9",
+                {
+                    center: [40.78018071428572, -96.6861409285714],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7aa5470093e3ec153587af4a507b9a6f = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/ceciliammurphy/cmmaos5fy002o01qnd2l1a2hx/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiY2VjaWxpYW1tdXJwaHkiLCJhIjoiY21tMTFkNjU3MDRweDJ3b2c3Zjd6NThmZSJ9.0hGueEPJtzWFLvq4Pjab8Q",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Mapbox",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7aa5470093e3ec153587af4a507b9a6f.addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var marker_4053be08465c4c36189b1ab75ce0a127 = L.marker(
+                [40.738101, -96.683092],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_68775df6f1227807c544facdf132edd3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8978c44fc94b2d09c9636d36b3974d72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f8912984f6a85e9d0253d48e6cdd62e8 = $(`<div id="html_f8912984f6a85e9d0253d48e6cdd62e8" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Runza</h4>         <p style="margin:0 0 8px 0;">Founded in Lincoln, this family-owned restaurant chain has become a Nebraska staple for many generations. The food is comforting and unique, keeping customers both near and far coming back to Nebraska. It's my first stop shop once I land in Nebraska.</p>         <img src="https://www.runza.com/_next/image?url=https%3A%2F%2Fdrupal.runza.com%2Fsites%2Fdefault%2Ffiles%2F_images%2Fgeneral%2Fnew-store-new-logo-1200x675.jpg&w=3840&q=75" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Restaurant</em></p>     </div>     </div>`)[0];
+                popup_8978c44fc94b2d09c9636d36b3974d72.setContent(html_f8912984f6a85e9d0253d48e6cdd62e8);
+            
+        
+
+        marker_4053be08465c4c36189b1ab75ce0a127.bindPopup(popup_8978c44fc94b2d09c9636d36b3974d72)
+        ;
+
+        
+    
+    
+                marker_4053be08465c4c36189b1ab75ce0a127.setIcon(icon_68775df6f1227807c544facdf132edd3);
+            
+    
+            var marker_05cd0d14125f36d7afda01fa4303a4af = L.marker(
+                [40.73947, -96.703756],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_81e8320039cdd2bf092818f5dd1d4736 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac495c4e20badfb2d71c5e1c8361f4dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ebdb2487b756bfd928c687976f7d72bf = $(`<div id="html_ebdb2487b756bfd928c687976f7d72bf" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Southwest High School</h4>         <p style="margin:0 0 8px 0;">A highly-rated high school located in the southwestern corner of Lincoln. The school's mascot of the Southwest Silverhawks has lead the school to both academic and athletic success. Not to mention, it is my alma mater.</p>         <img src="https://lsw.lps.org/wp-content/uploads/sites/74/2020/03/20200307-DSC_0092-768x510.jpg" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: School</em></p>     </div>     </div>`)[0];
+                popup_ac495c4e20badfb2d71c5e1c8361f4dd.setContent(html_ebdb2487b756bfd928c687976f7d72bf);
+            
+        
+
+        marker_05cd0d14125f36d7afda01fa4303a4af.bindPopup(popup_ac495c4e20badfb2d71c5e1c8361f4dd)
+        ;
+
+        
+    
+    
+                marker_05cd0d14125f36d7afda01fa4303a4af.setIcon(icon_81e8320039cdd2bf092818f5dd1d4736);
+            
+    
+            var marker_a032a0dd39d8148e71c5d3f681200153 = L.marker(
+                [40.754746, -96.65498],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_f78800fb93ca7e50ce5e24c9814b4060 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_563833ae385b07413ae070f47146ab16 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_37c31d9da357c0498ac800d97dacab57 = $(`<div id="html_37c31d9da357c0498ac800d97dacab57" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Bagels & Joe</h4>         <p style="margin:0 0 8px 0;">Bagels & Joe is the definition of a Lincoln staple. It's where you go to study, catch up with friends, or just sit and exist for a while. It feels cozy and local in the best way, and it's always been one of my favorite low-key hangout spots.</p>         <img src="https://bagelsandjoe.com/wp-content/uploads/2021/06/foundryoutside-1536x2048.jpg" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Restaurant</em></p>     </div>     </div>`)[0];
+                popup_563833ae385b07413ae070f47146ab16.setContent(html_37c31d9da357c0498ac800d97dacab57);
+            
+        
+
+        marker_a032a0dd39d8148e71c5d3f681200153.bindPopup(popup_563833ae385b07413ae070f47146ab16)
+        ;
+
+        
+    
+    
+                marker_a032a0dd39d8148e71c5d3f681200153.setIcon(icon_f78800fb93ca7e50ce5e24c9814b4060);
+            
+    
+            var marker_7b835781f470533345769c344eaa3ce0 = L.marker(
+                [40.739275, -96.643531],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_cf5493b7470ad0ab3cbbf95ec6a3747e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7aff36423f4c47bae65857c9c93001c4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_72cda39c1882e6d9fd3f45f33ca57f78 = $(`<div id="html_72cda39c1882e6d9fd3f45f33ca57f78" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Hiro 88</h4>         <p style="margin:0 0 8px 0;">This Asian and sushi spot is the go-to for a casual brunch, date night, or celebration. Their extensive menu has something for anyone to enjoy. My favorite menu items are the crab rangoons, Ebi Tempura roll, and the Crazy Horse roll.</p>         <img src="https://hiro88.com/file/2015/11/hiro88-stills-lincoln-lunch.jpg" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Restaurant</em></p>     </div>     </div>`)[0];
+                popup_7aff36423f4c47bae65857c9c93001c4.setContent(html_72cda39c1882e6d9fd3f45f33ca57f78);
+            
+        
+
+        marker_7b835781f470533345769c344eaa3ce0.bindPopup(popup_7aff36423f4c47bae65857c9c93001c4)
+        ;
+
+        
+    
+    
+                marker_7b835781f470533345769c344eaa3ce0.setIcon(icon_cf5493b7470ad0ab3cbbf95ec6a3747e);
+            
+    
+            var marker_6655969aaf7451913c06445cb363f53a = L.marker(
+                [40.816825, -96.704115],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_fd824d072ee91a0d12f57bc40f320deb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8785d5b595ddc0d459ee140fdfb53a25 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5547610d5cff098dafb58e3751255440 = $(`<div id="html_5547610d5cff098dafb58e3751255440" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Sheldon Museum of Art</h4>         <p style="margin:0 0 8px 0;">The Sheldon is such an underrated gem in Lincoln. It's quiet, clean, and surprisingly impressive for a city our size. I've always loved walking through it because it feels calm and inspiring at the same time.</p>         <img src="https://visitnebraska.com/sites/default/files/styles/listing_slideshow/public/listing_images/profile/3388/Sheldon_Museum_of_Art_Great_Hall-29jpg1492116910.jpg?itok=zeFK74Xf" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Museum</em></p>     </div>     </div>`)[0];
+                popup_8785d5b595ddc0d459ee140fdfb53a25.setContent(html_5547610d5cff098dafb58e3751255440);
+            
+        
+
+        marker_6655969aaf7451913c06445cb363f53a.bindPopup(popup_8785d5b595ddc0d459ee140fdfb53a25)
+        ;
+
+        
+    
+    
+                marker_6655969aaf7451913c06445cb363f53a.setIcon(icon_fd824d072ee91a0d12f57bc40f320deb);
+            
+    
+            var marker_06bddb8f4af431746003bfb25d91b7da = L.marker(
+                [40.781507, -96.625011],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_3266447f880c3555c15c17ac590d8844 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_acaddb4be29eb07878835083c0c4d943 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cc2b3d81b00b527049740eeb7357c429 = $(`<div id="html_cc2b3d81b00b527049740eeb7357c429" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Holmes Park</h4>         <p style="margin:0 0 8px 0;">Holmes Lake is where you go when you need fresh air. Whether it's walking, running, or just sitting by the water, it feels like Lincoln's reset button. During the pandemic, my friends and I would meet up in our cars and watch the sunset.</p>         <img src="https://www.lincoln.ne.gov/files/sharedassets/public/v/2/parks-amp-rec/parks-amp-facilities/parks/lpr-park-holmestrail.jpg?dimension=pageimage&w=480" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Park</em></p>     </div>     </div>`)[0];
+                popup_acaddb4be29eb07878835083c0c4d943.setContent(html_cc2b3d81b00b527049740eeb7357c429);
+            
+        
+
+        marker_06bddb8f4af431746003bfb25d91b7da.bindPopup(popup_acaddb4be29eb07878835083c0c4d943)
+        ;
+
+        
+    
+    
+                marker_06bddb8f4af431746003bfb25d91b7da.setIcon(icon_3266447f880c3555c15c17ac590d8844);
+            
+    
+            var marker_dee69e84e2ad86f37b44e54f0a1c4c84 = L.marker(
+                [40.752088, -96.657428],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_1494bb0771399c3df0c3f7e6e959b435 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkpurple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a74008813b703da44be2e2b065043c17 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c36609ddcf6497d951556195649ce536 = $(`<div id="html_c36609ddcf6497d951556195649ce536" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">St Peter Catholic Church</h4>         <p style="margin:0 0 8px 0;">This church has been a place many monumental moments for me. I was baptized here as a baby and even went to school here. The church has been through many renovations, but it will always feel familiar to me.</p>         <img src="https://d7dmb23lnttdm.cloudfront.net/images/stories/parish/iuhiug.jpg?1766181912" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Church</em></p>     </div>     </div>`)[0];
+                popup_a74008813b703da44be2e2b065043c17.setContent(html_c36609ddcf6497d951556195649ce536);
+            
+        
+
+        marker_dee69e84e2ad86f37b44e54f0a1c4c84.bindPopup(popup_a74008813b703da44be2e2b065043c17)
+        ;
+
+        
+    
+    
+                marker_dee69e84e2ad86f37b44e54f0a1c4c84.setIcon(icon_1494bb0771399c3df0c3f7e6e959b435);
+            
+    
+            var marker_a9d5ce46723236a545bb3271020b1660 = L.marker(
+                [40.816397, -96.704723],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_755c51e15c70a7e53dbf1897d5b314c2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cf5aba465ce8f221faf8a33e0bab7563 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f02aa0a3fcac1f810b415e8d2497c23f = $(`<div id="html_f02aa0a3fcac1f810b415e8d2497c23f" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Lied Center</h4>         <p style="margin:0 0 8px 0;">The Lied Center is where Lincoln feels bigger than it is. From Broadway tours to concerts and performances, it brings in events that make the city feel connected to something larger. I used to perform in the Nutcracker on the Lied stage.</p>         <img src="https://news.unl.edu/sites/default/files/styles/wide/public/media/images/20161202-liedcenter-unlt.jpg?itok=gf16JXI2" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Cultural Site</em></p>     </div>     </div>`)[0];
+                popup_cf5aba465ce8f221faf8a33e0bab7563.setContent(html_f02aa0a3fcac1f810b415e8d2497c23f);
+            
+        
+
+        marker_a9d5ce46723236a545bb3271020b1660.bindPopup(popup_cf5aba465ce8f221faf8a33e0bab7563)
+        ;
+
+        
+    
+    
+                marker_a9d5ce46723236a545bb3271020b1660.setIcon(icon_755c51e15c70a7e53dbf1897d5b314c2);
+            
+    
+            var marker_40ffa928f9732564c828030b87a14f20 = L.marker(
+                [40.820033, -96.701891],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_b79009e90b07db487c7b3f78bc2d6244 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_365b8627575692b056b3f451f682f303 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50fbbc0d211e1f6c922584c064b77341 = $(`<div id="html_50fbbc0d211e1f6c922584c064b77341" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Morrill Hall</h4>         <p style="margin:0 0 8px 0;">Morrill Hall is most known for their iconic giant mammoth statue guarding the front doors. I remember going on field trips to the planetarium as a child.</p>         <img src="https://museum.unl.edu/assets/images/bddae125-ec9c-42db-be3c-49823a814716.jpg" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Cultural Site</em></p>     </div>     </div>`)[0];
+                popup_365b8627575692b056b3f451f682f303.setContent(html_50fbbc0d211e1f6c922584c064b77341);
+            
+        
+
+        marker_40ffa928f9732564c828030b87a14f20.bindPopup(popup_365b8627575692b056b3f451f682f303)
+        ;
+
+        
+    
+    
+                marker_40ffa928f9732564c828030b87a14f20.setIcon(icon_b79009e90b07db487c7b3f78bc2d6244);
+            
+    
+            var marker_d55ab4ccf12528c40cf4cbec8537f76f = L.marker(
+                [40.776205, -96.760669],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_dbb67815450fccbe68a5a28873d52f2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae0e56772869263bff7c9bcb13dbacfc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f700dbdd397c98059fdcffba98922d4d = $(`<div id="html_f700dbdd397c98059fdcffba98922d4d" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Pioneers Park</h4>         <p style="margin:0 0 8px 0;">Pioneers Park feels wild in the best way. The trails, open fields, and even the bison make it feel like you're outside the city without actually leaving it. It's always been a go-to for walks and just being outside.</p>         <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/lincoln/02_126E6B73-FDD8-CBA6-7E0EEC359824E487-126e6ac3ecc100e_126e6e46-c7e5-c569-e4ca993f95c19335.png" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Park</em></p>     </div>     </div>`)[0];
+                popup_ae0e56772869263bff7c9bcb13dbacfc.setContent(html_f700dbdd397c98059fdcffba98922d4d);
+            
+        
+
+        marker_d55ab4ccf12528c40cf4cbec8537f76f.bindPopup(popup_ae0e56772869263bff7c9bcb13dbacfc)
+        ;
+
+        
+    
+    
+                marker_d55ab4ccf12528c40cf4cbec8537f76f.setIcon(icon_dbb67815450fccbe68a5a28873d52f2b);
+            
+    
+            var marker_7fd38add3efa26e63ba65bb291a9e77c = L.marker(
+                [40.776205, -96.760669],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_5cbcba158ccf9053f72e4aac83c2debf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a1a930ef3fefdb26812a840c85816fbc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_94352b4b2b5c8a5e926a2c0e75e1996f = $(`<div id="html_94352b4b2b5c8a5e926a2c0e75e1996f" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Pinewood Bowl Theater</h4>         <p style="margin:0 0 8px 0;">The Pinewood Bowl Theater stage is home to the Pinewood Performing Arts company. This outdoor stage hosts concerts, plays, and musicals. During the pandemic, my dance studio's recital was at the theater.</p>         <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_avif,g_xy_center,h_450,q_65,w_1440,x_2016,y_1585/v1/clients/lincoln/Pinewood_22_1_182d83e0-ba3d-423a-abdc-38d31a19add9.jpg" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Cultural Site</em></p>     </div>     </div>`)[0];
+                popup_a1a930ef3fefdb26812a840c85816fbc.setContent(html_94352b4b2b5c8a5e926a2c0e75e1996f);
+            
+        
+
+        marker_7fd38add3efa26e63ba65bb291a9e77c.bindPopup(popup_a1a930ef3fefdb26812a840c85816fbc)
+        ;
+
+        
+    
+    
+                marker_7fd38add3efa26e63ba65bb291a9e77c.setIcon(icon_5cbcba158ccf9053f72e4aac83c2debf);
+            
+    
+            var marker_aca114f097d81c4d503e14af9ef433fe = L.marker(
+                [40.830502, -96.666685],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_f5b2b187c1cfa546ff56e348316ff6fe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8fc065532214338f7162adcab4df1894 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_575251ef4797d4321d7a2080dd5db3f1 = $(`<div id="html_575251ef4797d4321d7a2080dd5db3f1" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">UNL Dairy Store</h4>         <p style="margin:0 0 8px 0;">Located on East Campus, the UNL Dairy Store serves fresh, university-made ice cream that has become one of Lincoln's most beloved local traditions. My favorite flavor is the classic strawberry.</p>         <img src="https://dairystore.unl.edu/sites/unl.edu.ianr.dairy-store/files/styles/16_9_3192x1796/public/media/image/UNL-Dairy-Store-Hero-2.jpg?itok=2afsPguQ" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Restaurant</em></p>     </div>     </div>`)[0];
+                popup_8fc065532214338f7162adcab4df1894.setContent(html_575251ef4797d4321d7a2080dd5db3f1);
+            
+        
+
+        marker_aca114f097d81c4d503e14af9ef433fe.bindPopup(popup_8fc065532214338f7162adcab4df1894)
+        ;
+
+        
+    
+    
+                marker_aca114f097d81c4d503e14af9ef433fe.setIcon(icon_f5b2b187c1cfa546ff56e348316ff6fe);
+            
+    
+            var marker_3ae57918cf414ff7176d4fdf2aec7177 = L.marker(
+                [40.830141, -96.697915],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_5a4756d2baafc6fc77e712c1e4c67b32 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bafb8ffdca5e36360387a94c778019e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1c6ee6efc570c5a91d89f7527a8637cb = $(`<div id="html_1c6ee6efc570c5a91d89f7527a8637cb" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">Bob Devaney Sports Center</h4>         <p style="margin:0 0 8px 0;">Home to Nebraska basketball and the powerhouse, national championship-winning volleyball team, the Bob Devaney Center is where Husker pride feels loud and electric. The arena continuously hosts sold out seasons.</p>         <img src="https://gray-koln-prod.gtv-cdn.com/resizer/v2/WP5TKFSODFAALAG6R7CY46C32U.jpg?auth=adf9224675e829559c4e45e4559677de7bf7ca1c6f6035f2abb53629bad18fc8&width=1600&height=900&smart=true" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Cultural Site</em></p>     </div>     </div>`)[0];
+                popup_9bafb8ffdca5e36360387a94c778019e.setContent(html_1c6ee6efc570c5a91d89f7527a8637cb);
+            
+        
+
+        marker_3ae57918cf414ff7176d4fdf2aec7177.bindPopup(popup_9bafb8ffdca5e36360387a94c778019e)
+        ;
+
+        
+    
+    
+                marker_3ae57918cf414ff7176d4fdf2aec7177.setIcon(icon_5a4756d2baafc6fc77e712c1e4c67b32);
+            
+    
+            var marker_01fb32f5b4bc2e3b8b3cf973170effea = L.marker(
+                [40.751035, -96.641508],
+                {
+}
+            ).addTo(map_2a7d39852100e2abfbdd39ef51b4ced9);
+        
+    
+            var icon_270843e97a6cdcbd0cda0f4001250787 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_96fe665af131b84dc74d2b5391de76cf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_83102329059cee0f5df2ef0c5b9b7316 = $(`<div id="html_83102329059cee0f5df2ef0c5b9b7316" style="width: 100.0%; height: 100.0%;">     <div style="width:260px;">         <h4 style="margin:0 0 6px 0;">HJ Dance</h4>         <p style="margin:0 0 8px 0;">My hometown dance studio where I grew up dancing, making memories, and gaining a lifelong family. Their competition team is nationally award-winning, and their instructors foster a community of support and love.</p>         <img src="https://images.squarespace-cdn.com/content/v1/5f0f34bc16c8ab21fe51e619/1595559892925-KW98CCS9VYNNIIW5NUPW/homepage_girls_photo.jpg" style="width:240px; border-radius:8px;" />         <p style="margin:8px 0 0 0;"><em>Type: Local Business</em></p>     </div>     </div>`)[0];
+                popup_96fe665af131b84dc74d2b5391de76cf.setContent(html_83102329059cee0f5df2ef0c5b9b7316);
+            
+        
+
+        marker_01fb32f5b4bc2e3b8b3cf973170effea.bindPopup(popup_96fe665af131b84dc74d2b5391de76cf)
+        ;
+
+        
+    
+    
+                marker_01fb32f5b4bc2e3b8b3cf973170effea.setIcon(icon_270843e97a6cdcbd0cda0f4001250787);
+            
+</script>
+</html>

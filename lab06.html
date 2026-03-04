@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hometown Map | Cecilia Murphy</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/darkmode.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lab02.html">Lab 2: AI Evaluation</a>
+        <a href="lab03.html">Lab 3: Visualization Critique</a>
+        <a href="lab04.html">Lab 4: Tableau Visualization</a>
+        <a href="lab05.html">Lab 5: Vibe Coding</a>
+        <a href="lab06.html" class="active">Lab 6: Hometown Map</a>
+    </nav>
+
+    <header>
+        <h1>Hometown Map</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Interactive Map</h2>
+
+            <!-- Embedded hometown_map.html -->
+            <iframe src="hometown_map.html" width="100%" height="600" style="border: none;" title="Hometown Map"></iframe>
+
+        </section>
+
+        <section>
+            <h2>Reflection</h2>
+
+            <h3>Design Inspiration</h3>
+
+            <p>My basemap design was inspired by Andy Warhol's pop-art cow prints, specifically the blue and purple color variations. I was drawn to the bold, high-contrast palette and the way Warhol used flat, saturated colors to create something playful but still intentional. Instead of creating a realistic or muted map, I wanted mine to feel graphic and stylized.</p>
+            <p>I translated that inspiration into my basemap by using a cool-toned blue and purple base palette for land and water, then layering brighter pinks and purples for roads. Rather than keeping traditional cartographic colors (like gray roads or light blue water), I leaned into contrast. Major roads became brighter and more saturated, while minor streets were softer and lighter to maintain hierarchy. I also adjusted opacity and width across zoom levels so the map felt cohesive whether you were viewing Lincoln at a city scale or zooming into specific neighborhoods. The goal was for the map to feel artistic without becoming unreadable.</p>
+
+            <h3>Cartographic Challenges</h3>
+
+            <p>The biggest cartographic challenge was designing across multiple zoom levels. A map that looks balanced at a city scale can fall apart when zoomed in too far or out too far. I had to adjust road widths using zoom stops so major highways didn't dominate the screen at small scales but still stood out when zoomed in.</p>
+
+            <p>Another challenge was deciding what to simplify. I turned off unnecessary layers and minimized certain labels so the map wouldn't feel cluttered. Because my palette was bold, too many features competing visually made the design overwhelming. I had to think intentionally about hierarchy: what needs attention first, what should fade into the background, and how color intensity affects visual weight.</p>
+
+            <h3>Technical Challenges</h3>
+
+            <p>The technical side was honestly more complex than the styling. First, my Mapbox style ID was incorrect because I had copied the entire URL instead of just the style ID, which broke the tile URL in my Python script. Then I ran into environment issues. Python wasn't properly installed, and VS Code didn't have an interpreter selected.</p>
+
+            <p>After that, my CSV file became corrupted due to commas inside image URLs. Because some URLs contained parameters like w=1200, pandas interpreted those commas as column breaks. This caused mismatched columns and errors when reading the file. The solution was wrapping all fields in quotes so the commas inside URLs were treated as part of the string.</p>
+
+            <p>I used both ChatGPT and Claude Opus 4.6 to help debug these issues, but I made sure I understood what was happening at each step, especially how APIs construct URLs, how f-strings work, and why CSV formatting matters for data parsing.</p>
+        </h3>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Cecilia Murphy</p>
+    </footer>
+</body>
+</html>
