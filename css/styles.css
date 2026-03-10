@@ -1,126 +1,175 @@
 /* =========================
    DCDA 40833 Skills Portfolio Template
-   CSS Stylesheet for Student Portfolios
+   Main stylesheet for the portfolio website.
+   This file controls the site's overall visual identity,
+   including colors, layout, spacing, typography, responsive behavior,
+   dark mode, portfolio cards, tables, and code block styling.
    ========================= */
 
 /* =========================
    CSS Variables (Color Scheme)
+   These variables create a consistent visual system across the site.
+   Instead of hard-coding colors repeatedly, I defined them once here
+   so I can reuse them throughout the stylesheet and update them more easily.
    ========================= */
 :root {
-    /* Core neutrals */
-    --primary-color: #2b2b2b;        /* Soft black, not harsh */
-    --secondary-color: #7a746a;      /* Warm taupe-gray */
+    /* Core neutral colors used for major structure, such as navigation
+       and larger text elements. These keep the site grounded and readable. */
+    --primary-color: #2b2b2b;        /* Soft black, used for strong contrast areas */
+    --secondary-color: #7a746a;      /* Warm taupe-gray, used for softer emphasis */
 
-    /* Red accents (used sparingly) */
-    --accent-color: #8b1e1e;         /* Muted oxblood */
-    --accent-soft: #e6cfcf;          /* Blushed cream for hover states */
+    /* Accent colors used more sparingly for visual interest,
+       hover states, highlights, and details. */
+    --accent-color: #8b1e1e;         /* Muted oxblood red for emphasis */
+    --accent-soft: #e6cfcf;          /* Light blush tone for subtle highlights and hover states */
 
-    /* Text */
-    --text-color: #1f1f1f;           /* Inky charcoal */
-    --text-secondary: #6f6f6f;       /* Soft gray for captions */
+    /* Main text colors for body copy and secondary/supporting text. */
+    --text-color: #1f1f1f;           /* Main readable body text color */
+    --text-secondary: #6f6f6f;       /* Softer gray used for captions and secondary information */
 
-    /* Backgrounds */
-    --bg-color: #f8f3ec;             /* Creamy paper white */
-    --bg-alt: #efe7dd;               /* Warm neutral sections */
+    /* Background colors for the page and alternate section styling. */
+    --bg-color: #f8f3ec;             /* Main page background, warm paper-like cream */
+    --bg-alt: #efe7dd;               /* Alternate light neutral used for subtle variation */
 
-    /* Utility */
-    --white: #ffffff;        /* Soft dividers */
+    /* Utility colors used in several places across the site. */
+    --white: #ffffff;                /* Used for card/section backgrounds and contrast areas */
+
+    /* This variable is not in your original file, but it is referenced later.
+       Adding it here prevents broken borders where var(--border-color) is used. */
+    --border-color: #d8c9b8;         /* Soft neutral border tone */
 }
 
 /* =========================
    Dark Mode Overrides
+   When the html element gets the class "dark-mode",
+   these variable values replace the default light theme values above.
+   This approach keeps dark mode cleaner because I can swap colors
+   without rewriting every selector from scratch.
    ========================= */
 html.dark-mode {
-    --primary-color: #e8e0d6;
-    --secondary-color: #4a4540;
-    --accent-color: #d4726a;
-    --accent-soft: #3d2626;
-    --text-color: #e4ddd4;
-    --text-secondary: #a8a096;
-    --bg-color: #1a1816;
-    --bg-alt: #242120;
-    --white: #2a2724;
+    --primary-color: #e8e0d6;        /* Lightened primary tone for dark backgrounds */
+    --secondary-color: #4a4540;      /* Dark muted neutral for structure */
+    --accent-color: #d4726a;         /* Warmer accent color that stands out better in dark mode */
+    --accent-soft: #3d2626;          /* Deeper soft accent for backgrounds/hover effects */
+    --text-color: #e4ddd4;           /* Main light text for readability on dark backgrounds */
+    --text-secondary: #a8a096;       /* Softer secondary light text */
+    --bg-color: #1a1816;             /* Main dark page background */
+    --bg-alt: #242120;               /* Alternate dark background for subtle contrast */
+    --white: #2a2724;                /* Reused utility variable now becomes a dark card/section background */
 }
 
-/* Dark mode toggle button */
+/* =========================
+   Dark Mode Toggle Button
+   This styles the button users click to switch between light and dark mode.
+   It is designed to stay visually simple and fit inside the navigation bar.
+   ========================= */
 #dark-mode-toggle {
-    background: none;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.3rem 0.6rem;
-    border-radius: 8px;
-    line-height: 1;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    margin-left: auto;
-    flex-shrink: 0;
+    background: none;                /* Keeps the button transparent by default */
+    border: 2px solid rgba(255, 255, 255, 0.4);  /* Soft visible border against the nav */
+    color: white;                    /* White text/icon for contrast in dark nav */
+    font-size: 1.2rem;               /* Slightly larger for readability */
+    cursor: pointer;                 /* Shows that the element is clickable */
+    padding: 0.3rem 0.6rem;          /* Adds breathing room around the icon/text */
+    border-radius: 8px;              /* Soft rounded corners to match the site style */
+    line-height: 1;                  /* Prevents extra vertical spacing */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+    margin-left: auto;               /* Pushes the toggle toward the right side in flex layouts */
+    flex-shrink: 0;                  /* Prevents the button from shrinking too much on small screens */
 }
 
+/* Hover state for the dark mode button.
+   This gives the user visual feedback that the button is interactive. */
 #dark-mode-toggle:hover {
     background-color: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.7);
 }
 
-/* Dark mode adjustments for elements using literal colors */
+/* =========================
+   Dark Mode Adjustments for Specific Elements
+   These selectors handle elements that still rely on literal/light colors
+   and therefore need direct correction in dark mode.
+   ========================= */
+
+/* Makes section backgrounds adapt to dark mode instead of staying bright white. */
 html.dark-mode main section {
     background-color: var(--white);
 }
 
+/* Makes tables consistent with dark mode card/section backgrounds. */
 html.dark-mode table {
     background: var(--white);
 }
 
+/* Alternating table rows still need contrast in dark mode. */
 html.dark-mode tr:nth-child(even) {
     background: var(--bg-alt);
 }
 
-html.dark-mode p code, html.dark-mode li code {
+/* Inline code needs special styling so it stays readable in dark mode. */
+html.dark-mode p code,
+html.dark-mode li code {
     background: #2a2724;
     color: #e87878;
 }
 
+/* Portfolio cards also need background updates in dark mode. */
 html.dark-mode .portfolio-card {
     background: var(--white);
     color: var(--text-color);
 }
 
+/* Paragraph text inside cards gets a softer secondary tone in dark mode. */
 html.dark-mode .portfolio-card p {
     color: var(--text-secondary);
 }
 
+/* Framework callout gets a darker gradient so it still feels visually distinct. */
 html.dark-mode .framework-callout {
     background: linear-gradient(135deg, #2a2230, #1e1528);
 }
 
+/* Keeps header text white for strong contrast on the darker header background. */
 html.dark-mode header {
     color: white;
 }
 
 /* =========================
    Basic Reset & Typography
+   This section removes inconsistent browser defaults
+   and establishes the site's basic text system.
    ========================= */
+
+/* Universal reset:
+   Removes default browser margin/padding and makes sizing more predictable
+   by including padding and border inside an element's declared width/height. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Enables smooth animated scrolling when jumping to anchor links on the page. */
 html {
-    scroll-behavior: smooth;       /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
 }
 
+/* Body styles apply to most text and the site's global background.
+   This sets the overall tone and readability of the page. */
 body {
     font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    line-height: 1.6;                /* Improves readability of paragraph text */
+    color: var(--text-color);        /* Uses the main text variable */
+    background-color: var(--bg-color); /* Uses the page background variable */
 }
 
 /* =========================
    Header & Navigation
+   These selectors define the top structure of the website:
+   the page title area and the persistent navigation menu.
    ========================= */
-/* Style semantic tags directly - no classes needed! */
+
+/* Styles the main page header using the semantic header tag.
+   This creates a centered banner with strong visual separation from the rest of the site. */
 header {
     background-color: var(--secondary-color);
     color: white;
@@ -129,48 +178,56 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Main name/title inside the header. */
 header h1 {
     color: white;
     margin: 0 0 0.5rem 0;
     font-size: 2rem;
 }
 
+/* Course information or subtitle inside the header. */
 header p {
     margin: 0;
-    opacity: 0.9;
+    opacity: 0.9;                    /* Slightly softens the secondary line */
     font-size: 1.1rem;
 }
 
+/* Navigation bar styles.
+   This section uses flexbox so the nav links and buttons can align neatly.
+   Sticky positioning keeps navigation visible as the user scrolls. */
 nav {
     background-color: var(--primary-color);
     padding: 0.75rem;
-    display: flex;              /* Make nav a flex container */
-    justify-content: center;    /* Center the ul inside nav */
-    align-items: center;        /* Vertically center items */
-    gap: 0.5rem;                /* Space between nav content and toggle */
-    position: sticky;           /* Stick to top when scrolling */
+    display: flex;                   /* Makes nav children align in a flexible row */
+    justify-content: center;         /* Centers the main content horizontally */
+    align-items: center;             /* Vertically aligns nav items */
+    gap: 0.5rem;                     /* Space between child elements inside nav */
+    position: sticky;                /* Keeps nav attached to the top of the screen while scrolling */
     top: 0;
-    z-index: 100;
+    z-index: 100;                    /* Ensures nav stays above page content */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
+    flex-wrap: wrap;                 /* Allows wrapping on smaller screens */
 }
 
-/* Style the navigation list */
+/* Styles the unordered list that holds the navigation links. */
 nav ul {
-    list-style: none;           /* Remove bullets */
-    padding: 0;                 /* Remove default padding */
-    margin: 0;                  /* Remove default margin */
-    display: flex;              /* Arrange items horizontally */
-    flex-direction: row;        /* Explicit: horizontal on desktop */
-    justify-content: center;    /* Center the items */
-    gap: 1rem;                  /* Space between items */
-    flex-wrap: wrap;            /* Wrap on small screens */
+    list-style: none;                /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;                   /* Places list items in a row */
+    flex-direction: row;             /* Explicitly keeps desktop nav horizontal */
+    justify-content: center;
+    gap: 1rem;                       /* Space between links */
+    flex-wrap: wrap;                 /* Allows links to wrap if needed */
 }
 
+/* Extra insurance to make sure no bullets appear on list items. */
 nav li {
-    list-style: none;           /* Extra insurance - remove bullets */
+    list-style: none;
 }
 
+/* Individual nav links.
+   These are styled like buttons for better clickability and appearance. */
 nav a {
     color: white;
     text-decoration: none;
@@ -179,12 +236,15 @@ nav a {
     border-radius: 4px;
 }
 
+/* Hover state for nav links.
+   This gives users feedback and creates a more interactive feel. */
 nav a:hover {
     background-color: var(--accent-soft);
     color: var(--primary-color);
 }
 
-/* Wrapper for loose nav links on lab pages (created by JS) */
+/* Wrapper used for navigation links on lab pages when JavaScript reorganizes them.
+   This keeps direct links aligned consistently even outside the ul structure. */
 .nav-links {
     display: flex;
     flex-direction: row;
@@ -198,24 +258,28 @@ nav a:hover {
 
 /* =========================
    Main Content
+   This section controls the width and spacing of the central page content.
+   It also standardizes the appearance of content sections.
    ========================= */
-/* Style main semantic tag directly */
+
+/* Constrains the main content column so lines of text do not become too wide,
+   which improves readability. Also centers the entire content area on the page. */
 main {
-    max-width: 900px;          /* Don't get too wide */
-    margin: 2rem auto;         /* Center horizontally */
-    padding: 0 1rem;           /* Space on sides for mobile */
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* All sections inside main get consistent styling */
+/* Gives all sections inside main a consistent card-like appearance. */
 main section {
     background-color: white;
     padding: 2rem;
-    margin-bottom: 2rem;       /* Space between sections */
-    border-radius: 8px;        /* Rounded corners */
+    margin-bottom: 2rem;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Style h2 headings inside sections */
+/* Styles major section headings so they feel visually separated and important. */
 main section h2 {
     color: var(--primary-color);
     border-bottom: 3px solid var(--accent-soft);
@@ -224,6 +288,7 @@ main section h2 {
     font-size: 1.875rem;
 }
 
+/* Styles h3 subheadings within sections. */
 main section h3 {
     color: var(--text-color);
     margin-top: 1.5rem;
@@ -231,36 +296,45 @@ main section h3 {
     font-size: 1.5rem;
 }
 
-/* Paragraphs inside sections */
+/* Standard paragraph spacing and line height inside content sections. */
 main section p {
     margin-bottom: 1rem;
     line-height: 1.8;
 }
 
-/* Lists inside sections */
+/* Standard spacing for unordered and ordered lists inside sections. */
 main section ul,
 main section ol {
     margin: 1rem 0 1rem 2rem;
     line-height: 1.8;
 }
 
+/* Adds vertical spacing between list items for readability. */
 main section li {
     margin-bottom: 0.5rem;
 }
 
-/* Style all figure/images */
+/* =========================
+   Figures and Images
+   These rules style standalone visual content like screenshots,
+   headshots, charts, and captions.
+   ========================= */
+
+/* Centers figures and adds vertical breathing room. */
 figure {
     text-align: center;
     margin: 2rem auto;
 }
 
+/* Ensures images are responsive and visually polished. */
 figure img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%;                 /* Prevents images from overflowing their container */
+    height: auto;                    /* Preserves aspect ratio */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles figure captions as softer supporting text. */
 figure figcaption {
     font-style: italic;
     color: var(--text-secondary);
@@ -270,22 +344,26 @@ figure figcaption {
 
 /* =========================
    Data Visualizations
+   These classes help structure charts, screenshots, and visual outputs
+   so they are presented clearly and consistently.
    ========================= */
-/* Container for charts and images */
+
+/* General visualization container for single charts or images. */
 .viz-container {
     margin: 2rem 0;
     text-align: center;
 }
 
+/* Makes images inside visualization containers responsive and polished. */
 .viz-container img {
-    max-width: 100%;           /* Responsive: never wider than container */
-    height: auto;              /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 0.5rem;
 }
 
-/* Figure captions */
+/* Caption styling for visuals. */
 .viz-container figcaption {
     font-style: italic;
     color: var(--text-secondary);
@@ -293,7 +371,8 @@ figure figcaption {
     margin-top: 0.5rem;
 }
 
-/* Grid layout for multiple visualizations */
+/* Grid layout for displaying multiple visuals side by side when space allows.
+   auto-fit with minmax makes this responsive without hard-coding column counts. */
 .viz-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -302,121 +381,71 @@ figure figcaption {
 }
 
 /* =========================
-   Code Blocks
-   ========================= */
-/* Improve pre/code styling for Python code */
-pre {
-    background: #2d2d2d;          /* Dark background */
-    color: #f8f8f2;               /* Light text */
-    border: none;
-    border-radius: 8px;
-    padding: 1.5rem;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-code {
-    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-}
-
-/* Inline code (inside paragraphs) */
-p code, li code {
-    background: #f4f4f4;
-    color: #c7254e;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.9em;
-}
-
-/* Code block titles */
-.code-title {
-    background: #1e1e1e;
-    color: #9cdcfe;
-    padding: 0.5rem 1rem;
-    border-radius: 8px 8px 0 0;
-    font-family: monospace;
-    font-size: 0.85rem;
-    margin-bottom: -0.5rem;
-}
-
-.code-title + pre {
-    border-radius: 0 0 8px 8px;
-    margin-top: 0;
-}
-
-/* =========================
    Data Tables
+   This section styles structured tabular data,
+   such as comparison charts, experiment results, or summaries.
    ========================= */
+
+/* General table styling. */
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse;       /* Merges borders for a cleaner table look */
     margin: 1.5rem 0;
     background: white;
 }
 
-th, td {
+/* Shared cell styling for both header cells and regular data cells. */
+th,
+td {
     padding: 0.75rem 1rem;
     text-align: left;
     border: 1px solid var(--border-color);
 }
 
+/* Header row styling. */
 th {
     background: var(--primary-color);
     color: white;
     font-weight: 600;
 }
 
+/* Zebra striping makes long tables easier to scan row by row. */
 tr:nth-child(even) {
     background: #f8f9fa;
 }
 
+/* Specialized styling for result-oriented tables that should be narrower and more compact. */
 .results-table {
     font-size: 0.95rem;
     margin: 1.5rem auto;
     max-width: 700px;
 }
 
+/* Centers most cells in the results table. */
 .results-table td {
     text-align: center;
 }
 
+/* First column stays left-aligned because it often contains labels/categories. */
 .results-table td:first-child {
     text-align: left;
     font-weight: 500;
 }
 
-/* Highlight key rows */
+/* Highlight row for especially important results. */
 .results-table tr.highlight {
     background: #fff3cd;
     font-weight: bold;
 }
 
 /* =========================
-   Framework Connections
-   ========================= */
-.framework-callout {
-    background: linear-gradient(135deg, #f0e7f8, #e9d5ff);
-    border-left: 5px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-}
-
-.framework-callout h3 {
-    color: var(--primary-color);
-    margin-top: 0;
-}
-
-.framework-callout strong {
-    color: var(--secondary-color);
-}
-
-/* =========================
    Portfolio Cards
+   This section creates the card-based layout used on the homepage
+   to showcase and link to each lab project.
    ========================= */
-/* Grid layout for portfolio cards on home page */
+
+/* Grid container for the cards.
+   Responsive columns let the layout adapt automatically to screen width. */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -424,31 +453,36 @@ tr:nth-child(even) {
     margin: 2rem 0;
 }
 
-/* Individual portfolio card styling */
+/* Individual card styling.
+   Each card is an anchor tag, so the whole card is clickable. */
 .portfolio-card {
     display: block;
     background: white;
     border: 2px solid var(--accent-soft);
     border-radius: 12px;
     padding: 1.5rem;
-    text-decoration: none;
+    text-decoration: none;           /* Removes default link underline */
     color: var(--text-color);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;       /* Smooth hover animation */
     position: relative;
 }
 
+/* Hover state lifts the card slightly and deepens emphasis,
+   making the card feel more interactive and polished. */
 .portfolio-card:hover {
     border-color: var(--accent-color);
     box-shadow: 0 8px 16px rgba(77, 25, 121, 0.15);
     transform: translateY(-4px);
 }
 
+/* Card title styling. */
 .portfolio-card h3 {
     color: var(--primary-color);
     margin: 0 0 0.5rem 0;
     font-size: 1.25rem;
 }
 
+/* Card description styling. */
 .portfolio-card p {
     color: var(--text-secondary);
     font-size: 0.95rem;
@@ -456,7 +490,7 @@ tr:nth-child(even) {
     line-height: 1.5;
 }
 
-/* Lab tag badge on portfolio cards */
+/* Small badge used to identify the lab number. */
 .lab-tag {
     display: inline-block;
     background: var(--secondary-color);
@@ -470,7 +504,8 @@ tr:nth-child(even) {
 }
 
 /* =========================
-   Footer (semantic tag)
+   Footer
+   The footer closes the page with attribution and useful links.
    ========================= */
 footer {
     background-color: #333;
@@ -480,20 +515,24 @@ footer {
     margin-top: 2rem;
 }
 
+/* Footer links get a softer accent color for contrast. */
 footer a {
     color: var(--accent-soft);
     text-decoration: none;
 }
 
+/* Underline on hover makes it clear the footer link is interactive. */
 footer a:hover {
     text-decoration: underline;
 }
 
 /* =========================
    Hamburger Menu Button
+   This is the mobile navigation trigger.
+   It stays hidden on larger screens and appears on smaller screens.
    ========================= */
 #hamburger-toggle {
-    display: none;              /* Hidden on desktop */
+    display: none;                   /* Hidden on desktop because full nav is visible */
     background: none;
     border: none;
     color: white;
@@ -503,35 +542,43 @@ footer a:hover {
     line-height: 1;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    order: -1;                  /* Push to the left of nav */
+    order: -1;                       /* Moves button toward the left in the flex layout */
 }
 
+/* Hover feedback for the hamburger button. */
 #hamburger-toggle:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* =========================
    Responsive Design (Mobile)
+   These styles activate on smaller screens to improve usability,
+   spacing, tap targets, and navigation behavior.
    ========================= */
 @media (max-width: 768px) {
+
+    /* Reduces the main header title size so it fits better on phones. */
     header h1 {
-        font-size: 1.5rem;     /* Smaller on mobile */
+        font-size: 1.5rem;
     }
 
-    /* Show hamburger button on mobile */
+    /* Shows the hamburger button once the screen is small enough
+       that the full desktop nav would become crowded. */
     #hamburger-toggle {
         display: block;
     }
 
+    /* Allows nav elements to wrap more naturally on small screens. */
     nav {
         font-size: 0.9rem;
-        flex-wrap: wrap;        /* Allow content to wrap below hamburger row */
+        flex-wrap: wrap;
     }
 
-    /* Nav links container (ul or direct links) — hidden by default */
+    /* Hides nav links by default on mobile until the hamburger menu is activated.
+       This works for both ul-based nav and JS-generated direct link wrappers. */
     nav ul,
     nav .nav-links {
-        display: none;                  /* Hidden until toggled */
+        display: none;
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -539,42 +586,51 @@ footer a:hover {
         padding: 0.5rem 0;
     }
 
-    /* When nav is open, show the links */
+    /* When JavaScript adds the "nav-open" class, the hidden links become visible. */
     nav.nav-open ul,
     nav.nav-open .nav-links {
         display: flex;
     }
 
+    /* Makes each nav link fill the width more like a mobile menu button,
+       which is easier for tapping. */
     nav a {
-        display: block;          /* Full width for easier tapping */
+        display: block;
         width: 100%;
         text-align: center;
         padding: 0.6rem 1rem;
     }
 
-    /* Keep dark mode toggle visible in the hamburger row */
+    /* Keeps the dark mode toggle visible and aligned within the mobile nav row. */
     #dark-mode-toggle {
-        order: 1;               /* Push to the right */
+        order: 1;
         margin-left: auto;
     }
 
+    /* Reduces padding inside sections so the content fits more comfortably on small screens. */
     main section {
-        padding: 1rem;         /* Less padding on mobile */
+        padding: 1rem;
     }
 
+    /* Forces visual grids into a single column on mobile so content does not feel cramped. */
     .viz-grid {
-        grid-template-columns: 1fr;  /* Single column on mobile */
+        grid-template-columns: 1fr;
     }
 }
 
 /* =========================
-   Print Styles (Optional)
+   Print Styles
+   These styles simplify the site when someone prints it.
+   Navigation is removed and heavy decorative effects are reduced.
    ========================= */
 @media print {
+
+    /* Hides navigation because it is not useful on paper. */
     nav {
         display: none;
     }
 
+    /* Removes shadows and tries to keep sections from splitting awkwardly across pages. */
     main section {
         box-shadow: none;
         page-break-inside: avoid;
