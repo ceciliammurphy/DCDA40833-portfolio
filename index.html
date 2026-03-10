@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Skills Portfolio showcasing work from DCDA 40833">
+    <!-- Identifies me as the author of the website -->
     <meta name="author" content="Cecilia Murphy">
     <title>Cecilia Murphy | DCDA 40833 Skills Portfolio</title>
+    <!-- Links the external CSS stylesheet that controls the site's layout, colors, fonts, spacing, and other visual styling -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Connects the JavaScript file for dark mode functionality -->
     <script src="js/darkmode.js"></script>
+    <!-- Connects the main JavaScript file for other interactive site features -->
     <script src="js/app.js"></script>
-    <!-- These tags are to attach the call to the javascript -->
 </head>
+
 <body>
     <!-- Navigation: Links to all portfolio pages -->
     <nav>
         <ul>
+            <!-- Home link returns the visitor to the main portfolio landing page -->
             <li><a href="index.html">Home</a></li>
+            <!-- Each of the following links takes the user to a dedicated page for a specific lab.
+                 This supports the link to the full written portion of each lab. -->
             <li><a href="lab02.html">Lab 2: AI Experimentation</a></li>
             <li><a href="lab03.html">Lab 3: Tufte Critique</a></li>
             <li><a href="lab04.html">Lab 4: Tableau Visualization</a></li>
@@ -31,37 +38,54 @@
     </header>
 
     <main>
-        <!-- Welcome Section: Brief introduction to your portfolio -->
+        <!-- Main contains the core content of the homepage.
+             This is where the introduction, biography, portfolio cards, and reflection live. -->
         <section id="welcome">
+            <!-- Welcome section gives visitors a quick explanation of what this website is,
+             what kind of work it contains, and how they should read it. -->
             <h2>Welcome</h2>
-            <p>This portfolio brings together the work I've completed in DCDA 40833, tracking my growth in web development, data, and digital design over the course of the semester.</p>
-            <p>It's less about polished final products and more about showing how my skills, problem-solving, and confidence evolved with each project.</p>
-            <!-- I wrote this brief welcome note to encourage visitors to this site to keep reading to learn more about me. I didn't want to give too much away too quickly. -->
+            <!-- This paragraph introduces the portfolio as a collection of semester work
+                 and frames the site as a record of skill development over time. -->
+            <p>This portfolio brings together the work I've completed in DCDA 40833 and highlights how my skills developed throughout the semester. Each project reflects a different part of the course, from experimenting with AI tools to building a portfolio website and creating interactive visualizations.</p>
+            <!-- This paragraph explains that the site is not only showing final products,
+                 but also emphasizing process, reflection, and growth. -->
+            <p>Rather than just presenting finished assignments, this site shows the process behind them. Each lab includes a brief overview of the assignment, what I learned while completing it, and how it reflects the technical and creative skills I developed over the semester.</p>
+            <!-- I wanted the welcome text to sound inviting and reflective instead of overly formal.
+                 It sets up the idea that this site is about growth, not just polished outcomes. -->
 
         </section>
 
-        <!-- About Section: Tell visitors about yourself -->
+        <!-- About section introduces who I am personally and academically.
+             This helps the portfolio feel more human and gives context for my interests. -->
         <section id="about">
             <h2>About Me</h2>
-            <!-- TODO: Replace this placeholder content with information about yourself -->
-            <p><strong>Who I am:</strong> Hi y'all! I'm Cecilia Murphy, but you can call me Cece. I am a senior Journalism major with a minor in DCDA! I can't believe I am graduating this May, but I am so excited to move to the city of my dreams. Please explore my portfolio and view all of my awesome work from this semester!</p>
-            <!-- I wanted to give a quick introduction of myself and hope my voice comes through in my writing. -->
-            <p><strong>My interests:</strong> My first love has always been dance, but I have always had a passion for the arts - fashion, museums, the stage, and film and television. I was drawn to DCDA because of how many creative classes were offered for this foucs. I wanted to expand on what I already knew (like art and photography), as well as grow in my knowledge in areas I was not as familiar with, such as film and code.</p>
-            <!-- I wanted to tailor my interests to align with my career goals. -->
-            <p><strong>What I hope to learn:</strong> In this course, I hope to deepen my knowledge and skills within VS Code (HTML, CSS, and JS) but also learn new programs, such as Python, ArcGIS, and Tableau. I learned a little python a couple years ago, but I am excited for a refresher on the language and learning more about it as well!</p>
-            <!-- I wanted to make it clear that I have some experience with code, but I still have much to learn. This section also gives specifics to each language I've learned or will learn. -->
+            <!-- This paragraph gives a brief personal and academic introduction.
+                 It explains my major/minor combination and connects my background to the purpose of the site. -->
+            <p><strong>Who I am:</strong> Hi y'all! I'm Cecilia Murphy. I'm a senior Journalism major with a minor in Digital Culture and Data Analytics at TCU. I can't believe I'm graduating this May, but I'm excited for what's next and the opportunity to move to the city of my dreams. This portfolio highlights the work I completed throughout the semester in DCDA 40833 and reflects the skills I developed along the way.</p>
+            <!-- This paragraph explains my creative interests and why DCDA appealed to me.
+                 It helps connect my artistic background to my digital and technical growth. -->
+            <p><strong>My interests:</strong> My first love has always been dance, but I've always been drawn to the arts more broadly: fashion, museums, the stage, and film and television. I was especially interested in DCDA because of how many creative directions the program explores. I wanted to expand on skills I already had in visual and creative areas like art and photography while also developing new technical skills in areas like film, coding, and digital design.</p>
+            <!-- This paragraph explains what I hoped to gain from the course.
+                 It also shows that I came in with some familiarity in certain areas,
+                 but still had room to grow in coding, data, and visualization tools. -->
+            <p><strong>What I hoped to learn:</strong> In this course, I wanted to deepen my knowledge of tools like VS Code (HTML, CSS, and JavaScript) while also learning new programs such as Python, ArcGIS, and Tableau. I had some previous exposure to Python, but this course gave me the opportunity to revisit it and build on that foundation while exploring new ways to work with data, visualization, and digital storytelling.</p>
 
-            <!-- Optional: Add a photo of yourself -->
+            <!-- I wanted this section to sound like me and not read like a stiff biography.
+                 It also gives visitors context for why these projects matter to my academic and career interests. -->
+
             <figure class="viz-container">
                 <img src="images/headshot.jpg" alt="Photo of Cece Murphy">
-                <!-- I chose this headshot because I recently updated my headshots and wanted this portfolio to match my resume. -->
+                <!-- I chose this headshot because it feels current and professional,
+                     and I wanted the portfolio branding to line up with my resume and other materials. -->
             </figure>
         </section>
 
-        <!-- Portfolio Section: Links to all lab pages -->
+        <!-- Portfolio section is the core showcase area of the homepage.
+             It presents clickable cards for each lab, allowing visitors to browse the projects easily. -->
         <section id="portfolio">
             <h2>My Work</h2>
-            <p>Click on any card below to view that lab assignment. Focus of actual labs may change over the course of the semester:</p>
+            <p>Click on any card below to view each full lab write-up:</p>
+            <!-- This short intro tells users how to use the cards below. -->
 
             <!-- Portfolio Grid: Cards linking to each lab page -->
             <div class="portfolio-grid">
@@ -70,50 +94,59 @@
                 <a href="lab02.html" class="portfolio-card">
                     <h3>AI Tool Evaluation</h3>
                     <span class="lab-tag">Lab 2</span>
-                    <p>Analysis of AI tools and their capabilities, exploring how artificial intelligence is changing digital culture.</p>
+                    <p>For this lab, I took an experimentation-based approach to exploring generative AI tools. Instead of focusing on productivity or polished outputs, I intentionally pushed the tools (Leonardo.AI, Adobe Firefly, Runway, and Pika) in unconventional ways to see where they succeeded, failed, or revealed hidden assumptions. By testing different prompts and comparing results across tools, I documented what worked, what broke down, and what those outcomes revealed about how AI systems operate.</p>
                 </a>
 
                 <!-- Lab 3: Tufte Critique -->
                 <a href="lab03.html" class="portfolio-card">
                     <h3>Tufte Critique</h3>
                     <span class="lab-tag">Lab 3</span>
-                    <p>Critical analysis of a data visualization using Edward Tufte's principles of graphical excellence.</p>
+                    <p>For this lab, I analyzed the infographic <em>“Global Suicide Rates Have Fallen by a Third”</em> published by The Economist. Using Edward Tufte's principles of graphical excellence, I evaluated how the visualization presented its data and whether it communicated the information clearly and accurately. My critique focused on issues such as misleading averages, lack of contextual information, and the limited set of countries used to represent a supposedly “global” trend.</p>
                 </a>
 
                 <!-- Lab 4: Tableau Visualization -->
                 <a href="lab04.html" class="portfolio-card">
                     <h3>Tableau Visualization</h3>
                     <span class="lab-tag">Lab 4</span>
-                    <p>Interactive data visualization created with Tableau Public, exploring patterns in real-world data.</p>
+                    <p>In this lab, I used Tableau Public to create interactive visualizations from a Kaggle dataset of global fashion brands, exploring relationships between brand equity, rankings, and long-term growth from 2001 to 2021.</p>
                 </a>
 
-                <!-- Lab 5: TBD -->
+                <!-- Lab 5: Vibe Coding -->
                 <a href="lab05.html" class="portfolio-card">
                     <h3>Vibe Coding</h3>
                     <span class="lab-tag">Lab 5</span>
-                    <p>Content based on Lab 5 assignment.</p>
+                    <p>In this lab, I experimented with “vibe coding” by using AI tools to generate and debug website features like a dark mode toggle and responsive hamburger menu, while reflecting on how AI can support—but not replace—human understanding in coding.</p>
                 </a>
 
                 <!-- Lab 6: Hometown Map -->
                 <a href="lab06.html" class="portfolio-card">
                     <h3>Hometown Map</h3>
                     <span class="lab-tag">Lab 6</span>
-                    <p>Interactive Folium map showcasing meaningful locations from my hometown with personal reflections.</p>
+                    <p>In this lab, I created an interactive hometown map by designing a custom Mapbox basemap, building a CSV dataset of meaningful locations, and using Python to geocode addresses and generate an interactive map with pop-ups.</p>
                 </a>
 
             </div>
         </section>
 
-        <!-- Reflection Section: Optional semester reflection -->
+        <!-- Reflection section provides a broader half-semester-level takeaway.
+             Unlike the individual lab pages, this section summarizes my growth across the whole first half of the course. -->
         <section id="reflection">
             <h2>Semester Reflection</h2>
-            <!-- TODO: After completing all labs, write a reflection on your growth -->
-            <p><strong>What I learned:</strong> 
-            <p>Lab 1: I refreshed my knowledge on the basics of setting up HTML and CSS.</p>
+            <p><strong>What I learned:</strong></p>
+            <!-- This subsection focuses on overall learning outcomes across the semester. -->
+            <p>Over the course of the semester, I learned how different tools and technologies can work together to tell stories through data and design. I gained hands-on experience using programs like Tableau, Mapbox Studio, and Python, as well as strengthening my skills in HTML, CSS, and JavaScript through VS Code. Each lab pushed me to think about how design choices, data organization, and technical implementation all affect how information is communicated.</p>
+
             <p><strong>Challenges I overcame:</strong></p>
-            <p>Lab 1: Since I just finished DCDA 40363, I felt very comfortable with this lab and working ahead. I didn't feel any challenges, but I did appreciate slowing down and going back to the basics.</p>
-            <p><strong>How I grew:</strong> [How did your understanding of digital culture and data analytics evolve?]</p>
-            <p><strong>Looking ahead:</strong> [How will you apply these skills in the future?]</p>
+            <!-- This subsection describes problem-solving and technical issues I had to work through. -->
+            <p>One of the biggest challenges was troubleshooting technical issues across different tools and coding environments. Whether it was debugging JavaScript for my website, cleaning and organizing datasets for Tableau, or resolving errors in my Python mapping script, I had to learn how to break problems down step by step. These challenges taught me that debugging is rarely about one single mistake, but about understanding how multiple parts of a project work together.</p>
+    
+            <p><strong>How I grew:</strong></p>
+            <!-- This subsection explains personal and academic growth across the course. -->
+            <p>This course helped me grow both technically and creatively. At the beginning of the semester, I was less comfortable working with code and data tools. Through repeated experimentation and problem-solving, I became more confident navigating new technologies and thinking critically about how digital tools shape the way information is presented and understood.</p>
+
+            <p><strong>Looking ahead:</strong></p>
+            <!-- This subsection looks ahead and connects the class to future academic/professional work. -->
+            <p>Moving forward, I hope to continue applying these skills in projects that combine creativity, storytelling, and technology. Understanding how to work with data, build interactive visuals, and design digital experiences will be valuable in many fields, especially as digital media continues to evolve. This course gave me a strong foundation that I can build on in future creative and professional work.</p>
         </section>
     </main>
 
